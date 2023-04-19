@@ -1,4 +1,6 @@
+<!-- muestra una lista de filtros que se pueden aplicar a una lista de personajes, utilizando Vuex para enviar una acción al store cuando se selecciona un filtro.muestra una lista de filtros que se pueden aplicar a una lista de personajes, utilizando Vuex para enviar una acción al store cuando se selecciona un filtro. -->
 <template>
+    <!-- se definen cuatro elementos "div" que representan cada filtro disponible. Cada filtro tiene un evento "click" que llama a la función "filter" con el estado correspondiente. -->
     <div class="filter">
       <div class="item" @click="filter('')">
         All
@@ -20,7 +22,8 @@
   export default {
     setup() {
       const store = useStore()
-  
+      
+      // define una función "filter" que recibe un parámetro "status" que corresponde al filtro seleccionado y envía una acción "filterByStatus" al store con el estado seleccionado.
       const filter = ((status) => {
         store.dispatch('filterByStatus', status)
       })

@@ -1,5 +1,6 @@
 <template>
     <section>
+      <!-- El componente utiliza una variable computada "characters" que devuelve la lista de personajes obtenida del store, y luego se itera sobre esta lista utilizando la directiva "v-for" para mostrar cada personaje en un componente secundario llamado "CardCharacter". Cada iteración se identifica por un atributo "key" único que se define por la propiedad "id" de cada personaje. -->
       <div class="characters">
         <div class="characters__item" v-for="character in characters" :key="character.id">
           <CardCharacter :character="character" />
@@ -22,6 +23,7 @@
       const characters = computed(() => {
         return store.state.charactersFilter
       })
+      // onMounted() se utiliza para hacer una llamada a una acción en el store, en este caso, la acción "getCharacters", que obtiene los personajes del servidor y los actualiza en el store.
       onMounted(() => {
         store.dispatch('getCharacters')
       })

@@ -1,8 +1,10 @@
+<!-- muestra información sobre un personaje individual, incluyendo su imagen, nombre, estado de vida, especie, lugar de origen y ubicación actual. -->
 <template>
     <div class="character">
       <img :src="character.image" :alt="character.name">
       <div class="character__info">
         <h3>{{ character.name }}</h3>
+        <!-- en función del valor de "status", se aplicará una de estas tres clases CSS: "alive" si el valor es "Alive", "dead" si el valor es "Dead" y "default" si el valor es cualquier otro. -->
         <div class="status">
           <span
             :class="
@@ -30,6 +32,7 @@
   
 <script>
   export default {
+    // utiliza una prop llamada "character" que es un objeto que contiene información sobre el personaje.
     props: ['character']
   }
 </script>

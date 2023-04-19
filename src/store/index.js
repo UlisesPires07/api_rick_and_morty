@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
 
+  // state: Define dos arreglos vacíos, characters y charactersFilter, que se utilizarán para almacenar los datos de los personajes y la información filtrada, respectivamente.
   state: {
     characters: [],
     charactersFilter: []
@@ -11,6 +12,7 @@ export default createStore({
   getters: {
   },
 
+  // mutations: Define dos mutaciones, setCharacters y setCharactersFilter, que actualizan el estado del store con los datos de los personajes y la información filtrada, respectivamente.
   mutations: {
     setCharacters(state, payload) {
       state.characters = payload
@@ -20,6 +22,9 @@ export default createStore({
     }
   },
 
+  // actions: Define tres acciones, getCharacters, filterByStatus y filterByName. 
+  // getCharacters utiliza la API para obtener la información de los personajes y actualizar el estado del store. 
+  // filterByStatus y filterByName toman un parámetro de búsqueda y filtran la información de los personajes en el estado del store utilizando esa búsqueda.
   actions: {
     async getCharacters({commit}) {
       try {
